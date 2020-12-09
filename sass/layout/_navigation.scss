@@ -1,0 +1,101 @@
+.navigation_checkbox {
+    display: none; }
+  
+  .navigation_button {
+    background-color: $color;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 60px;
+    right: 60px;
+    border-radius: 50%;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer; }
+  
+  .navigation_background {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 65px;
+    right: 65px;
+    background-image: radial-gradient($color, $color-light);
+    z-index: 1000;
+    /*transform: scale(80);*/
+    transition: transform 0.8s; }
+  
+  .navigation_nav {
+    height: 100vh;
+    width: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s; }
+  
+  .navigation_list {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center; }
+  
+  .navL:link,
+  .navL:visited {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 5px 10px;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #84C38E 50%);
+    background-size: 220%;
+    transition: all, 0.4s; }
+  
+  .navL_span {
+    display: inline-block; }
+  
+  .navL:hover,
+  .navL:active {
+    background-position: 100%;
+    transform: translateX(10px); }
+  
+  .navigation_checkbox:checked ~ .navigation_background {
+    transform: scale(80); }
+  
+  /* functionality*/
+  .navigation_checkbox:checked ~ .navigation_nav {
+    width: 100%;
+    opacity: 1;
+    left: 50%; }
+  
+  /* Icon*/
+  .navigation_icon {
+    position: relative;
+    margin-top: 25px; }
+  
+  .navigation_icon,
+  .navigation_icon::before,
+  .navigation_icon::after {
+    width: 30px;
+    height: 2px;
+    background-color: #e1e1e1;
+    display: inline-block; }
+  
+  .navigation_icon::before,
+  .navigation_icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s; }
+  
+  .navigation_icon::before {
+    top: -8px; }
+  
+  .navigation_icon::after {
+    top: 8px; }
+  
